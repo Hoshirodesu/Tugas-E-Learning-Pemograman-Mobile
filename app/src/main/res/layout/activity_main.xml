@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Implementasi 4 input control"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Date Time, Alert, Toast, Input Phone number"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:src="@drawable/castorice" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukkan nomor anda:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="8dp"/>
+
+    <EditText
+        android:id="@+id/editText_main"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toStartOf="@id/editText_main"
+        android:hint="Input number"
+        android:inputType="phone"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/button_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="8dp"
+        android:onClick="showText"
+        android:text="@string/show"/>
+
+    <TextView
+        android:id="@+id/title_phonelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:text="Nomor hp: " />
+
+    <TextView
+        android:id="@+id/text_phoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="-" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="Pilih tanggal dan waktu:"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/button_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="8dp"
+            android:text="@string/Date"
+            android:onClick="showDatePickerDialog"/>
+
+        <Button
+            android:id="@+id/button_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="@dimen/button_top_margin"
+            android:layout_alignBottom="@id/button_date"
+            android:layout_toRightOf="@id/button_date"
+            android:text="@string/Time"
+            android:onClick="showTimePickerDialog"/>
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_date"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:text="tanggal: "/>
+
+        <TextView
+            android:id="@+id/text_dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_date"
+            android:layout_toRightOf="@+id/text_date"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/text_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_dateLabel"
+            android:layout_marginLeft="8dp"
+            android:text="waktu: "/>
+
+        <TextView
+            android:id="@+id/text_timeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_dateLabel"
+            android:layout_toRightOf="@+id/text_time"
+            android:layout_marginLeft="8dp"
+            android:text="-"/>
+    </RelativeLayout>
+</LinearLayout>
