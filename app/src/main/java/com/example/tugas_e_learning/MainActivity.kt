@@ -92,8 +92,8 @@ class MainActivity : AppCompatActivity() {
     fun resetButton(view: View) {
         editTextMain.setText("")
         textPhoneLabel.text = "-"
-        textDateLabel.text = "-"
-        textTimeLabel.text = "-"
-        Toast.makeText(this, "Data telah direset", Toast.LENGTH_SHORT).show()
+        textDateLabel.text = "DD/MM/YYYY"
+        textTimeLabel.text = "HH:MM"
+        Toast.makeText(this, "tanggal dan waktu telah direset", Toast.LENGTH_SHORT).show()
     }
 }

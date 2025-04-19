@@ -125,7 +125,7 @@
             android:layout_toRightOf="@+id/text_date"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="8dp"
-            android:text="-"/>
+            android:text="DD/MM/YYYY"/>
 
         <TextView
             android:id="@+id/text_time"
@@ -142,7 +142,7 @@
             android:layout_below="@id/text_dateLabel"
             android:layout_toRightOf="@+id/text_time"
             android:layout_marginLeft="8dp"
-            android:text="-"/>
+            android:text="HH/MM"/>
 
         <Button
             android:id="@+id/reset"
