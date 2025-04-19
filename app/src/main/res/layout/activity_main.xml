@@ -145,13 +145,13 @@
             android:text="-"/>
 
         <Button
-            android:id="@+id/reset_button"
+            android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_date"
             android:layout_marginTop="50dp"
             android:layout_centerInParent="true"
-            android:text="@string/reset_button"
+            android:text="@string/reset"
             android:onClick="resetButton"/>
     </RelativeLayout>
 </LinearLayout>

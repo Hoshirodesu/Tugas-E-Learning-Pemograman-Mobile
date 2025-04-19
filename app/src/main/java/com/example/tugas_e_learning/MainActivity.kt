@@ -94,6 +94,6 @@ class MainActivity : AppCompatActivity() {
         textPhoneLabel.text = "-"
         textDateLabel.text = "-"
         textTimeLabel.text = "-"
-        Toast.makeText(this, "Data anda telah direset", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Data telah direset", Toast.LENGTH_SHORT).show()
     }
 }
