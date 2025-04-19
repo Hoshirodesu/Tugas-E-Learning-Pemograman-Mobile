@@ -88,4 +88,12 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Waktu: $timeText", Toast.LENGTH_SHORT).show()
         }, hour, minute, true).show()
     }
+
+    fun resetButton(view: View) {
+        editTextMain.setText("")
+        textPhoneLabel.text = "-"
+        textDateLabel.text = "-"
+        textTimeLabel.text = "-"
+        Toast.makeText(this, "Data anda telah direset", Toast.LENGTH_SHORT).show()
+    }
 }
