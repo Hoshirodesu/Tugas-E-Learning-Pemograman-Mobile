@@ -105,10 +105,6 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
-//        editTextMain.setText("")
-//        textPhoneLabel.text = "-"
-//        textDateLabel.text = "DD/MM/YYYY"
-//        textTimeLabel.text = "HH:MM"
 
     }
 }
