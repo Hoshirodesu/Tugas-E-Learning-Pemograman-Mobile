@@ -43,10 +43,11 @@ fun showDatePickerDialog(view: View) {
 ```
 
 ## 2. Alert Dialog
-<img src="https://github.com/user-attachments/assets/1aba73e1-25f4-4cb7-87e7-1c03609d125c" alt="alert" width="300" height="700">
+![alert](https://github.com/user-attachments/assets/759ab20c-a340-4052-bb10-9baf43c96a97) | ![alert2](https://github.com/user-attachments/assets/876fdb79-ff43-4613-a29b-65c3fa54c6a4)
+|:-------------------------------:|:-------------------------------:|
 
 ### Fitur:
-- Menampilkan dialog konfirmasi sebelum menyimpan data nomor telepon
+- Menampilkan dialog konfirmasi sebelum menyimpan data nomor telepon dan mereset data
 - Pilihan "Ya" untuk menyetujui, dan "Tidak" untuk membatalkan
 - Hasil implementasi:
 ```
@@ -69,44 +70,46 @@ fun showText(view: View) {
                 dialog.dismiss()
             }
             .show()
+
+fun resetButton(view: View) {
+        AlertDialog.Builder(this)
+            .setTitle("Konfirmasi")
+            .setMessage("Apakah Anda yakin ingin mereset data?")
+            .setPositiveButton("Ya") { dialog, _ ->
+                editTextMain.setText("")
+                textPhoneLabel.text = "-"
+                textDateLabel.text = "DD/MM/YYYY"
+                textTimeLabel.text = "HH:MM"
+                dialog.dismiss()
+                Toast.makeText(this, "data telah direset", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Tidak") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
 ```
 
 ## 3. Toast
-![toast](https://github.com/user-attachments/assets/59e92ea4-119d-466a-b163-2348f2dca549) | ![toast2](https://github.com/user-attachments/assets/3707e826-491f-420b-a902-bb08af5d82d6) | ![toast3](https://github.com/user-attachments/assets/aaf82370-2da1-47c3-8220-ce2a5dd71e87) | ![toast4](https://github.com/user-attachments/assets/63537590-1ba1-4cbf-b559-79c16d617153)
+![toast](https://github.com/user-attachments/assets/59e92ea4-119d-466a-b163-2348f2dca549) | ![toast2](https://github.com/user-attachments/assets/3707e826-491f-420b-a902-bb08af5d82d6) | ![toast3](https://github.com/user-attachments/assets/aaf82370-2da1-47c3-8220-ce2a5dd71e87) | ![toast5](https://github.com/user-attachments/assets/c67e4740-6e59-47f8-a7aa-3d8672843a20)
 |:-------------------------------:|:-------------------------------:|:-------------------------------:|:-------------------------------:|
 
 ### Fitur:
 - Memudahkan pengguna memilih tanggal dan waktu lewat dialog standar android
-- Saat pengguna meng-submit nomor telepon, tanggal dan waktu, Maka akan muncul sebuah pesan toast
+- Saat pengguna meng-submit nomor telepon, tanggal, waktu, dan reset maka akan muncul sebuah pesan toast
 - Hasil Implementasi:
 ```
 //Nomor telepon
-if (inputNumber.isEmpty() || !Patterns.PHONE.matcher(inputNumber).matches()) {
-            Toast.makeText(this, "Masukkan nomor telepon yang valid", Toast.LENGTH_SHORT).show()
-            return
-        }
+Toast.makeText(this, "Masukkan nomor telepon yang valid", Toast.LENGTH_SHORT).show()
 
 //Tanggal
-DatePickerDialog(this, { _, y, m, d ->
-            val dateText = "${d}/${m + 1}/$y"
-            textDateLabel.text = dateText
-            Toast.makeText(this, "Tanggal: $dateText", Toast.LENGTH_SHORT).show()
-        }, year, month, day).show()
+Toast.makeText(this, "Tanggal: $dateText", Toast.LENGTH_SHORT).show()
 
 //Waktu
-TimePickerDialog(this, { _, h, m ->
-            val timeText = String.format("%02d:%02d", h, m)
-            textTimeLabel.text = timeText
-            Toast.makeText(this, "Waktu: $timeText", Toast.LENGTH_SHORT).show()
-        }, hour, minute, true).show()
+Toast.makeText(this, "Waktu: $timeText", Toast.LENGTH_SHORT).show()
 
 //Reset
-fun resetButton(view: View) {
-editTextMain.setText("")
-        textPhoneLabel.text = "-"
-        textDateLabel.text = "DD/MM/YYYY"
-        textTimeLabel.text = "HH:MM"
-        Toast.makeText(this, "tanggal dan waktu telah direset", Toast.LENGTH_SHORT).show()
+Toast.makeText(this, "tanggal dan waktu telah direset", Toast.LENGTH_SHORT).show()
 }
 ```
 
