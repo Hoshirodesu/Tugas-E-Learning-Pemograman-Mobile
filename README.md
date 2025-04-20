@@ -120,7 +120,7 @@ Toast.makeText(this, "tanggal dan waktu telah direset", Toast.LENGTH_SHORT).show
 ### Fitur:
 - Memastikan pengguna hanya dapat memasukkan karakter yang valid untuk nomor telepon
 - Menggunakan EditText dengan ```inputType="phone"``` dan ```DigitsKeyListener``` untuk menginput nomor telepon
-- Hasil implementasi:Activity_main.xml
+- Hasil implementasi:
 ```
 //Activity_main.xml
 <EditText
