@@ -90,10 +90,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun resetButton(view: View) {
-        editTextMain.setText("")
-        textPhoneLabel.text = "-"
-        textDateLabel.text = "DD/MM/YYYY"
-        textTimeLabel.text = "HH:MM"
-        Toast.makeText(this, "tanggal dan waktu telah direset", Toast.LENGTH_SHORT).show()
+        AlertDialog.Builder(this)
+            .setTitle("Konfirmasi")
+            .setMessage("Apakah Anda yakin ingin mereset data?")
+            .setPositiveButton("Ya") { dialog, _ ->
+                editTextMain.setText("")
+                textPhoneLabel.text = "-"
+                textDateLabel.text = "DD/MM/YYYY"
+                textTimeLabel.text = "HH:MM"
+                dialog.dismiss()
+                Toast.makeText(this, "data telah direset", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Tidak") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+//        editTextMain.setText("")
+//        textPhoneLabel.text = "-"
+//        textDateLabel.text = "DD/MM/YYYY"
+//        textTimeLabel.text = "HH:MM"
+
     }
 }
